@@ -1,0 +1,21 @@
+{
+  "perl": "6.d",
+  "name": "Elerille::API::Sway",
+  "api": "0",
+  "auth": "github:elerille",
+  "version": "0.0.1",
+  "description": "An API for sway IPC",
+  "authors": [ "Élerille" ],
+  "license": "GPL-3.0-or-later",
+  "provides": {
+    "Elerille::API::Sway": "lib/Elerille/API/Sway.rakumod"
+  },
+  "depends": [ ],
+  "build-depends": [ ],
+  "test-depends": [ 
+    "Test::META"
+  ],
+  "resources": [ ],
+  "tags": [ "sway", "IPC", "i3" ],
+  "source-url": "git://github.com/elerille/raku-elerille-api-sway.git"
+}
