@@ -8,7 +8,9 @@
   "authors": [ "Élerille" ],
   "license": "GPL-3.0-or-later",
   "provides": {
-    "Elerille::API::Sway": "lib/Elerille/API/Sway.rakumod"
+    "Elerille::API::Sway": "lib/Elerille/API/Sway.rakumod",
+    "Elerille::API::Sway::Output": "lib/Elerille/API/Sway/Output.rakumod",
+    "Elerille::API::Sway::LowLevel": "lib/Elerille/API/Sway/LowLevel.rakumod"
   },
   "depends": [ ],
   "build-depends": [ ],

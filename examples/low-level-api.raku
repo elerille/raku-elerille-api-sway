@@ -18,10 +18,10 @@
 
 use lib 'lib';
 
-use Elerille::API::Sway;
+use Elerille::API::Sway::LowLevel;
 use JSON::Fast;
 
-my Sway $sway .= new;
+my Elerille::API::Sway::LowLevel $sway .= new;
 say $sway.subscribe(
   "workspace",
   "mode",

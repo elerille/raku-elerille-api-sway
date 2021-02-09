@@ -15,39 +15,14 @@
 # You should have received a copy of the GNU General Public License
 # along with Elerille::API::Sway.  If not, see <https://www.gnu.org/licenses/>.
 
-unit class Elerille::API::Sway is export;
+unit class Elerille::API::Sway::OutputMode is export;
 
-use Elerille::API::Sway::LowLevel;
 
-use Elerille::API::Sway::Output;
+has Int $.width;
+has Int $.height;
+has Int $.refresh;
 
-has Elerille::API::Sway::LowLevel $!sway;
 
-method BUILD(:$socket-path) {
-  if $socket-path.defined {
-    $!sway .= new: :$socket-path;
-  } else {
-    $!sway .= new;
-  }
+method Str {
+  return $!width ~ "x" ~ $!height ~ "@" ~ $!refresh/1000 ~ "Hz";
 }
-
-method run(*@command) {
-  $!sway.run: @command.join(' ')
-  ==> await()
-  ==> map({ die $_.gist unless .<success>; True })
-}
-
-multi method output {
-  $!sway.get-outputs
-  ==> await()
-  ==> map({ Output.new(:$!sway, |$_) })
-}
-
-multi method output(Str $name) returns Output {
-  self.output.grep({ .name eq $name })[0]
-}
-
-
-
-
-
