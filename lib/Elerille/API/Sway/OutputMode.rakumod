@@ -24,5 +24,9 @@ has Int $.refresh;
 
 
 method Str {
-  return $!width ~ "x" ~ $!height ~ "@" ~ $!refresh/1000 ~ "Hz";
+  if $!refresh.defined {
+    return $!width ~ "x" ~ $!height ~ "@" ~ $!refresh/1000 ~ "Hz";
+  } else {
+    return $!width ~ "x" ~ $!height;
+  }
 }

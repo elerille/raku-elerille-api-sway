@@ -17,6 +17,10 @@ Elerille::API::Sway - Raku API for sway IPC
 
 This module allows to interact with sway on Raku.
 
+### Manage output
+
+See [examples/output.raku](examples/output.raku) for full example
+
 ## REPOSITORY
 
 Fork this module on GitLab instance 

@@ -32,15 +32,16 @@ method BUILD(:$socket-path) {
 }
 
 method run(*@command) {
+  say "> ", @command.join(' ');
   $!sway.run: @command.join(' ')
   ==> await()
-  ==> map({ die $_.gist unless .<success>; True })
+  ==> map({ warn $_.gist unless .<success>; .<success> })
 }
 
 multi method output {
   $!sway.get-outputs
   ==> await()
-  ==> map({ Output.new(:$!sway, |$_) })
+  ==> map({ Output.new(sway=>self, |$_) })
 }
 
 multi method output(Str $name) returns Output {

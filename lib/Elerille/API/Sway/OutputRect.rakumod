@@ -18,13 +18,16 @@
 unit class Elerille::API::Sway::OutputRect is export;
 
 
-has Int $.width;
-has Int $.height;
 has Int $.x;
 has Int $.y;
-
+has Int $.width;
+has Int $.height;
 
 method Str {
-  return $!x ~ " " ~ $!y ~ " res " ~ $!width ~ "x" ~ $!height;
+  if $!width.defined && $!height.defined {
+    return $!x ~ " " ~ $!y ~ " res " ~ $!width ~ "x" ~ $!height;
+  } else {
+    return $!x ~ " " ~ $!y;
+  }
 }
 
