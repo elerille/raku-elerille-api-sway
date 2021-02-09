@@ -19,5 +19,5 @@
   ],
   "resources": [ ],
   "tags": [ "sway", "IPC", "i3" ],
-  "source-url": "git://github.com/elerille/raku-elerille-api-sway.git"
+  "source-url": "git://git.thran.io/raku/elerille/api/sway.git"
 }
